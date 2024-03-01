@@ -13,7 +13,7 @@ public class Aluno {
     private String  escola;
     private String nomePai;
     private String cidade;
-    private String nomeBairro;
+    private String bairro;
     private double nota1;
     private double nota2;
     private double nota3;
@@ -167,10 +167,14 @@ public class Aluno {
         return escola;
      }
 
-     public void(String bairro) {
-        this.nomeBairro = nomeBairro;
+     public void setBairro(String bairro) {
+        this.bairro = bairro;
      }
-    
+     
+
+     public String getBairro() {
+        return bairro;
+     }
 
     /*Calculo da media */
 
@@ -212,6 +216,10 @@ public class Aluno {
             return "Aluno reprovado";
         }
 
+    }
+
+    public String toString() {
+        return "Aluno nome =" + " " + getNome() + " , idade =" + " " + getIdade() + ", dataNascimento =" + " " + getDataNascimento() + ", numeroCpf=" + " " + getNumeroCpf() + ", nomeMae =" + " " + getNomeMae() + ", nomePai =" + " " + getNomePai() + ". bairro =" + " " + getBairro() + ", cidade =" + " " + getCidade() + ", dataMatricula =" + " " + getDataMatricula() + ", escola =" + " " + getEscola() + ", nota1 =" + " " + nota1 + ", nota2 =" + " " + nota2 + ", nota3 =" + "" + nota3 + ", nota4aaaa =" + " " + nota4 ; 
     }
 
     
@@ -260,9 +268,14 @@ public class Aluno {
         System.out.println("Resultado = " + (aluno1.getAlunoAprovado() ? "Aprovado" : "Reprovado"));
 
         System.out.println("----------------------------------------------------------------------------------------");
+        
+         
 
 
+        
+        System.out.println(aluno1.toString()); /*Descroição do objeto na memoria */
+        System.out.println("Media do aluno = " + aluno1.getNota());
+        System.out.println("Resultado = " + aluno1.getAlunoAprovado2());
 
-    }
-   
+}
 }
