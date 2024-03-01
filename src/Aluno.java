@@ -1,3 +1,7 @@
+import java.lang.classfile.Interfaces;
+
+import javax.swing.JOptionPane;
+
 public class Aluno {
     private String nome;
     private int idade;
@@ -6,13 +10,20 @@ public class Aluno {
     private String numeroCpf;
     private String nomeMae;
     private String dataMatricula;
+    private String  escola;
+    private String nomePai;
+    private String cidade;
+    private String nomeBairro;
     private double nota1;
     private double nota2;
     private double nota3;
     private double nota4;
 
+   
+
 
     // Construtor padrão
+    /*Calculo */
     public double getNota1(){
         return nota1;
     }
@@ -44,7 +55,7 @@ public class Aluno {
     public void setNota4(double nota4){
         this.nota4 = nota4;
     }
-
+    /*Fim dos calculo */
 
     public Aluno() {
         this.nome = "";
@@ -54,6 +65,10 @@ public class Aluno {
         this.numeroCpf = "";
         this.nomeMae = "";
         this.dataMatricula = "";
+        this.nomePai = "";
+        this.cidade = "";
+        this.bairro = "";
+        this.escola = "";
     }
 
     // Construtor com um parâmetro para nome
@@ -124,6 +139,39 @@ public class Aluno {
         this.dataMatricula = dataMatricula;
     }
 
+    public String getNascimento() {
+        return dataNascimento;
+    }
+
+    public void setNomePai(String nomePai) {
+        this.nomePai = nomePai;
+    }
+
+    public String getNomePai() {
+        return nomePai;
+    }
+
+    public void setCidade (String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getCidade() {
+        return cidade;
+     }
+
+     public void setEscola(String escola) {
+        this.escola = escola;
+     }
+
+     public String getEscola() {
+        return escola;
+     }
+
+     public void(String bairro) {
+        this.nomeBairro = nomeBairro;
+     }
+    
+
     /*Calculo da media */
 
     public double getNota(){
@@ -166,7 +214,7 @@ public class Aluno {
 
     }
 
-
+    
 
     // Método main para exemplo de uso
     public static void main(String[] args) {
@@ -175,10 +223,34 @@ public class Aluno {
         Aluno aluno2 = new Aluno("João"); // Chama o construtor com um parâmetro para nome
         Aluno aluno3 = new Aluno("Maria", 25); // Chama o construtor com dois parâmetros para nome e idade
 
+
+        
+
+
         // Exemplo de uso dos métodos getters e setters
         /*Aluno 01 */
-        aluno1.setNome("Fernando");
-        aluno1.setIdade(30);
+        Aluno aluno = new Aluno();
+        String nome = JOptionPane.showInputDialog("Qual o nome do aluno?");
+        String idade = JOptionPane.showInputDialog("Qual sua idade?");
+        String Nascimento = JOptionPane.showInputDialog("Qual sua data de nascimento?");
+        String Matricula = JOptionPane.showInputDialog("Qual o dia da sua matricula?");
+        String nomeMae = JOptionPane.showInputDialog("Qual nome da sua mae?");
+        String nomePai = JOptionPane.showInputDialog("Qual  nome do seu pai?");
+        String escola = JOptionPane.showInputDialog("Qual nome da sua escola?");
+        String cidade = JOptionPane.showInputDialog("Qual nome da sua cidade ou CP?");
+        String nomeBairro = JOptionPane.showInputDialog("Qual nome do seu bairro?");
+
+        aluno1.setNome(nome);
+        aluno1.setIdade(Integer.valueOf(idade));
+        aluno1.setDataMatricula(Matricula);
+        aluno1.setDataNascimento(Nascimento);
+        aluno1.setNomeMae(nomeMae);
+        aluno1.setNomePai(nomePai);
+        aluno1.setEscola(escola);
+        aluno1.setCidade(cidade);
+        aluno1.setBairro(nomeBairro);
+
+
         aluno1.setNota1(90);    
         aluno1.setNota2(70);
         aluno1.setNota3(90);
@@ -190,34 +262,7 @@ public class Aluno {
         System.out.println("----------------------------------------------------------------------------------------");
 
 
-        /*Aluno 02 */
-        aluno2.setNome("Gustavo");
-        aluno2.setIdade(30);
-        aluno2.setNota1(90);    
-        aluno2.setNota2(70);
-        aluno2.setNota3(90);
-        aluno2.setNota4(100);
-        System.out.println("Nome: " + aluno2.getNome() + ", Idade: " + aluno2.getIdade());
-        double mediaAluno2 = (aluno2.getNota1() + aluno2.getNota2() + aluno2.getNota3() + aluno2.getNota4()) / 4;
-        System.out.println("Media das nota e = " + mediaAluno2); 
-        System.out.println("Resultado = " + (aluno2.getAlunoAprovado() ? "Aprovado" : "Reprovado"));
-        System.out.println("-----------------------------------------------------------------------------------------");
-
-
-
-        /*Aluno 03 */
-        aluno3.setNome("Milene");
-        aluno3.setIdade(30);
-        aluno3.setNota1(90);    
-        aluno3.setNota2(70);
-        aluno3.setNota3(90);
-        aluno3.setNota4(100);
-        System.out.println("Nome: " + aluno3.getNome() + ", Idade: " + aluno3.getIdade());
-        double mediaAluno3 = (aluno2.getNota1() + aluno2.getNota2() + aluno2.getNota3() + aluno2.getNota4()) / 4;
-        System.out.println("Medias das nota e: " + mediaAluno3);
-        System.out.println("Media da nota e = " + (aluno3.getAlunoAprovado() ? "Aprovado" : "Reprovado"));
- 
 
     }
-
+   
 }

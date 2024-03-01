@@ -1,6 +1,7 @@
 public class primeiraClasseObjetoAluno {
     public static void main(String[] args) throws Exception {
-        
+       
+
         Aluno aluno1; // Declaração do objeto, mas não inicializado
 
         Aluno aluno2 = new Aluno(); // Inicialização de um objeto utilizando o construtor padrão
