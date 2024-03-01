@@ -130,8 +130,41 @@ public class Aluno {
         return (nota1 + nota2 + nota3 + nota4 ) / 4;
     }
 
-  
 
+    /*Em boolean que retorna em numeros */
+    public boolean getAlunoAprovado(){
+        double media = this.getNota();
+        if(media >= 70) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+
+    /*Em String que retornara o texto */
+    public String getAlunoAprovado2(){
+        double media = this.getNota();
+        if(media >= 70) {
+            return "Aluno esta aprovado";
+        } else {
+            return "Aluno reprovado";
+        }
+
+    }
+
+    
+    
+    public String getAlunoAprovado3(){
+        double media = this.getNota();
+        if(media >= 70) {
+            return "Aluno esta aprovado";
+        } else {
+            return "Aluno reprovado";
+        }
+
+    }
 
 
 
@@ -143,13 +176,48 @@ public class Aluno {
         Aluno aluno3 = new Aluno("Maria", 25); // Chama o construtor com dois parâmetros para nome e idade
 
         // Exemplo de uso dos métodos getters e setters
+        /*Aluno 01 */
         aluno1.setNome("Fernando");
         aluno1.setIdade(30);
-        aluno1.setNota1(90);
+        aluno1.setNota1(90);    
         aluno1.setNota2(70);
         aluno1.setNota3(90);
         aluno1.setNota4(100);
         System.out.println("Nome: " + aluno1.getNome() + ", Idade: " + aluno1.getIdade());
         System.out.println("Media da nota e = " + aluno1.getNota());
+        System.out.println("Resultado = " + (aluno1.getAlunoAprovado() ? "Aprovado" : "Reprovado"));
+
+        System.out.println("----------------------------------------------------------------------------------------");
+
+
+        /*Aluno 02 */
+        aluno2.setNome("Gustavo");
+        aluno2.setIdade(30);
+        aluno2.setNota1(90);    
+        aluno2.setNota2(70);
+        aluno2.setNota3(90);
+        aluno2.setNota4(100);
+        System.out.println("Nome: " + aluno2.getNome() + ", Idade: " + aluno2.getIdade());
+        double mediaAluno2 = (aluno2.getNota1() + aluno2.getNota2() + aluno2.getNota3() + aluno2.getNota4()) / 4;
+        System.out.println("Media das nota e = " + mediaAluno2); 
+        System.out.println("Resultado = " + (aluno2.getAlunoAprovado() ? "Aprovado" : "Reprovado"));
+        System.out.println("-----------------------------------------------------------------------------------------");
+
+
+
+        /*Aluno 03 */
+        aluno3.setNome("Milene");
+        aluno3.setIdade(30);
+        aluno3.setNota1(90);    
+        aluno3.setNota2(70);
+        aluno3.setNota3(90);
+        aluno3.setNota4(100);
+        System.out.println("Nome: " + aluno3.getNome() + ", Idade: " + aluno3.getIdade());
+        double mediaAluno3 = (aluno2.getNota1() + aluno2.getNota2() + aluno2.getNota3() + aluno2.getNota4()) / 4;
+        System.out.println("Medias das nota e: " + mediaAluno3);
+        System.out.println("Media da nota e = " + (aluno3.getAlunoAprovado() ? "Aprovado" : "Reprovado"));
+ 
+
     }
+
 }
