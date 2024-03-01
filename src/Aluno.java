@@ -14,13 +14,48 @@ public class Aluno {
     private String nomePai;
     private String cidade;
     private String bairro;
+
     private double nota1;
+    private String disciplina1;
     private double nota2;
+    private String disciplina2;
     private double nota3;
+    private String disciplina3;
     private double nota4;
+    private String disciplina4;
 
    
+    public double getDisciplina1(){
+        return disciplina1;
+    }
 
+    public void setDisciplina1(double disciplina1) {
+        this.disciplina1 = disciplina1;
+    }
+
+    public double getDisciplina2() {
+        return disciplina2;
+    }
+
+    public void setDisciplina2(double disciplina2) {
+        this.disciplina2 = disciplina2;
+    }
+     
+    public double getDisciplina3() {
+        return disciplina3;
+    }
+
+    public void setDisciplina3(double disciplina3) {
+        this.disciplina3 = disciplina3;
+    }
+
+    public double getDisciplina4() {
+        return disciplina4;
+    }
+
+    public void setDisciplina4(double disciplina4) {
+        this.disciplina4 = disciplina4;
+    }
 
     // Construtor padrão
     /*Calculo */
@@ -222,22 +257,47 @@ public class Aluno {
         return "Aluno nome =" + " " + getNome() + " , idade =" + " " + getIdade() + ", dataNascimento =" + " " + getDataNascimento() + ", numeroCpf=" + " " + getNumeroCpf() + ", nomeMae =" + " " + getNomeMae() + ", nomePai =" + " " + getNomePai() + ". bairro =" + " " + getBairro() + ", cidade =" + " " + getCidade() + ", dataMatricula =" + " " + getDataMatricula() + ", escola =" + " " + getEscola() + ", nota1 =" + " " + nota1 + ", nota2 =" + " " + nota2 + ", nota3 =" + "" + nota3 + ", nota4aaaa =" + " " + nota4 ; 
     }
 
+    @Override
+    public boolean equals(Object obj) {
+    if (this == obj)
+        return true;
+    if (obj == null || getClass() != obj.getClass())
+        return false;
+    Aluno other = (Aluno) obj;
+    if (nome == null) {
+        return other.nome == null;
+    } else {
+        return nome.equals(other.nome);
+    }
+}
+
+    @Override
+    public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+    return result;
+}
+
+
     
 
     // Método main para exemplo de uso
     public static void main(String[] args) {
         // Exemplo de uso dos construtores
         Aluno aluno1 = new Aluno(); // Chama o construtor padrão
+
         Aluno aluno2 = new Aluno("João"); // Chama o construtor com um parâmetro para nome
         Aluno aluno3 = new Aluno("Maria", 25); // Chama o construtor com dois parâmetros para nome e idade
 
+        
 
         
 
 
         // Exemplo de uso dos métodos getters e setters
-        /*Aluno 01 */
-        Aluno aluno = new Aluno();
+        /*Aluno 01 
+        /*Aluno aluno = new Aluno(); */
         String nome = JOptionPane.showInputDialog("Qual o nome do aluno?");
         String idade = JOptionPane.showInputDialog("Qual sua idade?");
         String Nascimento = JOptionPane.showInputDialog("Qual sua data de nascimento?");
@@ -247,6 +307,20 @@ public class Aluno {
         String escola = JOptionPane.showInputDialog("Qual nome da sua escola?");
         String cidade = JOptionPane.showInputDialog("Qual nome da sua cidade ou CP?");
         String nomeBairro = JOptionPane.showInputDialog("Qual nome do seu bairro?");
+
+        String nota1 = JOptionPane.showInputDialog("Nota1");
+            String disciplina1 = JOptionPane.showInputDialog("Disciplina 1");
+        String nota2 = JOptionPane.showInputDialog("Nota2");
+
+            String disciplina2 = JOptionPane.showInputDialog("Disciplina 2");
+
+         String nota3 = JOptionPane.showInputDialog("Nota3");
+            String disciplina3 = JOptionPane.showInputDialog("Disciplina 3");
+            
+        String nota4 = JOptionPane.showInputDialog("Nota4");
+            String disciplina4 = JOptionPane.showInputDialog("Disciplina4");
+        
+        
 
         aluno1.setNome(nome);
         aluno1.setIdade(Integer.valueOf(idade));
@@ -276,6 +350,10 @@ public class Aluno {
         System.out.println(aluno1.toString()); /*Descroição do objeto na memoria */
         System.out.println("Media do aluno = " + aluno1.getNota());
         System.out.println("Resultado = " + aluno1.getAlunoAprovado2());
+
+
+        
+      
 
 }
 }
