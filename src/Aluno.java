@@ -16,46 +16,53 @@ public class Aluno {
     private String bairro;
 
     private double nota1;
-    private String disciplina1;
     private double nota2;
-    private String disciplina2;
     private double nota3;
-    private String disciplina3;
     private double nota4;
-    private String disciplina4;
 
-   
-    public double getDisciplina1(){
-        return disciplina1;
-    }
-
-    public void setDisciplina1(double disciplina1) {
-        this.disciplina1 = disciplina1;
-    }
-
-    public double getDisciplina2() {
-        return disciplina2;
-    }
-
-    public void setDisciplina2(double disciplina2) {
-        this.disciplina2 = disciplina2;
-    }
-     
-    public double getDisciplina3() {
-        return disciplina3;
-    }
-
-    public void setDisciplina3(double disciplina3) {
-        this.disciplina3 = disciplina3;
-    }
-
-    public double getDisciplina4() {
-        return disciplina4;
-    }
-
-    public void setDisciplina4(double disciplina4) {
-        this.disciplina4 = disciplina4;
-    }
+    
+    private double disciplina1;
+    private double disciplina2;
+    private double disciplina3;
+    private double disciplina4;
+    
+        // Construtores, métodos getters e setters para outras variáveis omitidos para brevidade...
+    
+    public double getDisciplina1() {
+            return disciplina1;
+        }
+    
+        public void setDisciplina1(double disciplina1) {
+            this.disciplina1 = disciplina1;
+        }
+    
+        public double getDisciplina2() {
+            return disciplina2;
+        }
+    
+        public void setDisciplina2(double disciplina2) {
+            this.disciplina2 = disciplina2;
+        }
+    
+        public double getDisciplina3() {
+            return disciplina3;
+        }
+    
+        public void setDisciplina3(double disciplina3) {
+            this.disciplina3 = disciplina3;
+        }
+    
+        public double getDisciplina4() {
+            return disciplina4;
+        }
+    
+        public void setDisciplina4(double disciplina4) {
+            this.disciplina4 = disciplina4;
+        }
+    
+        // Outros membros da classe...
+    
+    
 
     // Construtor padrão
     /*Calculo */
@@ -254,7 +261,7 @@ public class Aluno {
     }
 
     public String toString() {
-        return "Aluno nome =" + " " + getNome() + " , idade =" + " " + getIdade() + ", dataNascimento =" + " " + getDataNascimento() + ", numeroCpf=" + " " + getNumeroCpf() + ", nomeMae =" + " " + getNomeMae() + ", nomePai =" + " " + getNomePai() + ". bairro =" + " " + getBairro() + ", cidade =" + " " + getCidade() + ", dataMatricula =" + " " + getDataMatricula() + ", escola =" + " " + getEscola() + ", nota1 =" + " " + nota1 + ", nota2 =" + " " + nota2 + ", nota3 =" + "" + nota3 + ", nota4aaaa =" + " " + nota4 ; 
+        return "Aluno nome =" + " " + getNome() + " , idade =" + " " + getIdade() + ", dataNascimento =" + " " + getDataNascimento() + ", numeroCpf=" + " " + getNumeroCpf() + ", nomeMae =" + " " + getNomeMae() + ", nomePai =" + " " + getNomePai() + ", bairro =" + " " + getBairro() + ", cidade =" + " " + getCidade() + ", dataMatricula =" + " " + getDataMatricula() + ", escola =" + " " + getEscola() + ", nota1 =" + " " + nota1 + ", nota2 =" + " " + nota2 + ", nota3 =" + "" + nota3 + ", nota4 =" + " " + nota4; /*Adicionar a disciplna !*/
     }
 
     @Override
@@ -308,17 +315,18 @@ public class Aluno {
         String cidade = JOptionPane.showInputDialog("Qual nome da sua cidade ou CP?");
         String nomeBairro = JOptionPane.showInputDialog("Qual nome do seu bairro?");
 
-        String nota1 = JOptionPane.showInputDialog("Nota1");
             String disciplina1 = JOptionPane.showInputDialog("Disciplina 1");
+        String nota1 = JOptionPane.showInputDialog("Nota1");
+            
+            String disciplina2 = JOptionPane.showInputDialog("Disciplina 2");
         String nota2 = JOptionPane.showInputDialog("Nota2");
 
-            String disciplina2 = JOptionPane.showInputDialog("Disciplina 2");
-
-         String nota3 = JOptionPane.showInputDialog("Nota3");
-            String disciplina3 = JOptionPane.showInputDialog("Disciplina 3");
-            
-        String nota4 = JOptionPane.showInputDialog("Nota4");
+            String disciplina3 = JOptionPane.showInputDialog("Disciplina 3");          
+        String nota3 = JOptionPane.showInputDialog("Nota3");
+ 
             String disciplina4 = JOptionPane.showInputDialog("Disciplina4");
+        String nota4 = JOptionPane.showInputDialog("Nota4");
+        
         
         
 
@@ -337,6 +345,9 @@ public class Aluno {
         aluno1.setNota2(70);
         aluno1.setNota3(90);
         aluno1.setNota4(100);
+
+        
+
         System.out.println("Nome: " + aluno1.getNome() + ", Idade: " + aluno1.getIdade());
         System.out.println("Media da nota e = " + aluno1.getNota());
         System.out.println("Resultado = " + (aluno1.getAlunoAprovado() ? "Aprovado" : "Reprovado"));
